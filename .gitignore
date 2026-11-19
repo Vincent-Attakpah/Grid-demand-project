@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+
+# Local data (lives outside the repo; see NOWCASTER_DATA in README)
+data/
+*.parquet
+*.duckdb
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code worktrees
+.claude/worktrees/
