@@ -68,6 +68,7 @@ def query(sql: str, **params) -> pd.DataFrame:
     clean = (data_dir() / "clean").as_posix()
     con = duckdb.connect()
     try:
+        con.execute("SET TimeZone = 'UTC'")
         return con.execute(sql.replace("{clean}", clean), params or None).df()
     finally:
         con.close()
