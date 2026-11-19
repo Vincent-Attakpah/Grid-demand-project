@@ -1,0 +1,85 @@
+name: logger
+
+# Hourly EIA-930 + Open-Meteo logger (plan v2 section 5.3).
+# Runs at :17 (off the top-of-hour peak). Each run re-pulls an overlapping window and
+# appends only changed rows, so a late or dropped run is filled in by the next one;
+# no separate backup workflow is needed.
+# Data is committed to the orphan branch `data-log` (never to main). The checkout is
+# blobless + sparse: only state/, runs.jsonl and today's files are materialised, so
+# runtime does not grow with the size of the archive.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: logger
+  cancel-in-progress: false
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          path: code
+          sparse-checkout: |
+            src
+            config
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install logger dependencies
+        run: pip install --quiet --disable-pip-version-check requests pyyaml
+
+      - name: Check out data-log branch
+        env:
+          REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          set -euo pipefail
+          TODAY=$(date -u +%F)
+          if git ls-remote --exit-code --heads "$REPO_URL" data-log >/dev/null 2>&1; then
+            git clone --quiet --depth 1 --filter=blob:none --no-checkout --branch data-log "$REPO_URL" data-log
+            cd data-log
+            git sparse-checkout set --no-cone "/state/" "/runs.jsonl" "/raw/*/$TODAY.jsonl"
+            git checkout --quiet data-log
+          else
+            mkdir data-log && cd data-log
+            git init --quiet -b data-log
+            git remote add origin "$REPO_URL"
+          fi
+          git config user.name "nowcaster-logger"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run logger
+        id: log
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          HEARTBEAT_URL: ${{ secrets.HEARTBEAT_URL }}
+          PYTHONPATH: code/src
+        run: python -m nowcaster.logger.run --data-root data-log --offset-min 17
+
+      - name: Commit and push
+        if: always()
+        run: |
+          set -uo pipefail
+          cd data-log
+          git add -A
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit --quiet -m "log $(date -u +%Y-%m-%dT%H:%MZ) run ${{ github.run_id }}"
+          for i in 1 2 3 4 5; do
+            if git push --quiet origin HEAD:data-log; then exit 0; fi
+            echo "push failed (attempt $i); rebasing on remote"
+            git fetch --quiet --depth 5 origin data-log && git rebase --quiet FETCH_HEAD || git rebase --abort || true
+            sleep $((i * 5))
+          done
+          exit 1
