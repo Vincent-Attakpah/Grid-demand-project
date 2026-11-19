@@ -26,7 +26,19 @@ import sys
 import uuid
 from pathlib import Path
 
+import re
+
 import requests
+
+_SECRET_RE = re.compile(r"(api_key=)[^&\s]+", re.IGNORECASE)
+
+
+def redact(msg: str) -> str:
+    """Strip API keys from error text before it is written to the public log."""
+    key = os.environ.get("EIA_API_KEY", "").strip()
+    if key:
+        msg = msg.replace(key, "***")
+    return _SECRET_RE.sub(r"\1***", msg)
 
 from ..config import weather_settings
 from . import eia, openmeteo
@@ -112,7 +124,7 @@ def run(data_root: Path, *, now_fn=utcnow, session=None, eia_kwargs=None, om_bas
                                          "rows_fetched": len(rows), "rows_written": n, **extra}
         except Exception as e:
             record["sources"][source] = {"status": "error", "retrieved_at_utc": iso(t),
-                                         "error": f"{type(e).__name__}: {e}"[:500]}
+                                         "error": redact(f"{type(e).__name__}: {e}")[:500]}
 
     do("eia", lambda t: (eia.fetch(t, session=session, **(eia_kwargs or {})), {}), eia.key_and_sig)
 
@@ -128,7 +140,7 @@ def run(data_root: Path, *, now_fn=utcnow, session=None, eia_kwargs=None, om_bas
         append_jsonl(data_root / "raw" / "openmeteo_meta" / f"{t:%Y-%m-%d}.jsonl",
                      [{"retrieved_at_utc": iso(t), "run_id": run_id, "meta": meta}])
     except Exception as e:
-        record["meta_error"] = f"{type(e).__name__}: {e}"[:300]
+        record["meta_error"] = redact(f"{type(e).__name__}: {e}")[:300]
 
     index.prune(start)
     index.save()

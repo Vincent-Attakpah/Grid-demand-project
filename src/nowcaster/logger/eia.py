@@ -53,7 +53,7 @@ def fetch(now: dt.datetime, *, api_key: str | None = None, bas=DEFAULT_BAS, type
           window_hours: int = 72, session=None) -> list[dict]:
     """Pull the last `window_hours` hours plus anything stamped later than now (no `end`
     is sent, so forward-dated DF values are included). Returns normalised rows."""
-    api_key = api_key or os.environ.get("EIA_API_KEY")
+    api_key = (api_key or os.environ.get("EIA_API_KEY") or "").strip()
     if not api_key:
         raise RuntimeError("EIA_API_KEY is not set")
     session = session or requests.Session()
