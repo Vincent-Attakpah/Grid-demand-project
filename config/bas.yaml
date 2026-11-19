@@ -4,9 +4,11 @@
 # Times: everything is stored in UTC, hour-ending. `tz` defines the BA's operating day
 # (EIA-930 reports each BA in a local "time zone of record"; verify against EIA's BA list).
 #
-# Populations are 2020 Census city-proper counts used as starting weights only.
-# The weather agent must verify each city against the utility's service-territory map
-# (and may switch to metro/county weights) before the Open-Meteo backfill.
+# Weather cities: one representative point per population centre. `pop` is the 2020 Census
+# base population (Census PEP vintage 2024, ESTIMATESBASE2020) of the metro area (MSA) or,
+# where an MSA spans several BAs/utilities, of the county served. Optional `active_from` /
+# `active_until` (ISO dates, half-open) bound when a city counts toward the BA's weights.
+# Sources and reasoning per city: docs/weather_cities.md.
 
 weather:
   model: gfs_seamless          # fixed named model, identical in backtest and live
@@ -32,49 +34,61 @@ bas:
     tz: America/Chicago        # VERIFY: EIA time zone of record for SOCO
     notes: Check for a 2022 demand step when Gulf Power load moved to FPL.
     cities:
-      - {name: Atlanta,      state: GA, lat: 33.749, lon: -84.388, pop: 498715}
-      - {name: Birmingham,   state: AL, lat: 33.519, lon: -86.810, pop: 200733}
-      - {name: Montgomery,   state: AL, lat: 32.367, lon: -86.300, pop: 200603}
-      - {name: Mobile,       state: AL, lat: 30.695, lon: -88.040, pop: 187041}
-      - {name: Savannah,     state: GA, lat: 32.081, lon: -81.091, pop: 147780}
-      - {name: Augusta,      state: GA, lat: 33.471, lon: -81.975, pop: 202081}
-      - {name: Columbus,     state: GA, lat: 32.461, lon: -84.988, pop: 206922}
-      - {name: Macon,        state: GA, lat: 32.841, lon: -83.632, pop: 157346}
+      - {name: Atlanta,         state: GA, lat: 33.749, lon: -84.388, pop: 6106805}
+      - {name: Birmingham,      state: AL, lat: 33.519, lon: -86.810, pop: 1180600}
+      - {name: Augusta,         state: GA, lat: 33.471, lon: -81.975, pop: 610980}
+      - {name: Gulfport-Biloxi, state: MS, lat: 30.396, lon: -88.990, pop: 416256}
+      - {name: Mobile,          state: AL, lat: 30.695, lon: -88.040, pop: 414810}
+      - {name: Savannah,        state: GA, lat: 32.081, lon: -81.091, pop: 404795}
+      - {name: Montgomery,      state: AL, lat: 32.367, lon: -86.300, pop: 386056}
+      - {name: Columbus,        state: GA, lat: 32.461, lon: -84.988, pop: 328872}
+      - {name: Tuscaloosa,      state: AL, lat: 33.210, lon: -87.569, pop: 269780}
+      - {name: Macon,           state: GA, lat: 32.841, lon: -83.632, pop: 233799}
+      # Gulf Power (NW Florida) sat in the SOCO BA until its move to FPL. Boundary date is a
+      # placeholder: replace with the step date the EIA structural-break audit finds.
+      - {name: Pensacola,       state: FL, lat: 30.421, lon: -87.217, pop: 509902, active_until: "2022-07-01"}
   TVA:
     name: Tennessee Valley Authority
     priority: core
     tz: America/Chicago
     cities:
-      - {name: Nashville,    state: TN, lat: 36.163, lon: -86.781, pop: 689447}
-      - {name: Memphis,      state: TN, lat: 35.150, lon: -90.049, pop: 633104}
-      - {name: Knoxville,    state: TN, lat: 35.961, lon: -83.921, pop: 190740}
-      - {name: Chattanooga,  state: TN, lat: 35.046, lon: -85.309, pop: 181099}
-      - {name: Huntsville,   state: AL, lat: 34.730, lon: -86.586, pop: 215006}
-      - {name: Clarksville,  state: TN, lat: 36.530, lon: -87.359, pop: 166722}
+      - {name: Nashville,    state: TN, lat: 36.163, lon: -86.781, pop: 2014425}
+      - {name: Memphis,      state: TN, lat: 35.150, lon: -90.049, pop: 1345440}
+      - {name: Knoxville,    state: TN, lat: 35.961, lon: -83.921, pop: 903474}
+      - {name: Chattanooga,  state: TN, lat: 35.046, lon: -85.309, pop: 563308}
+      - {name: Huntsville,   state: AL, lat: 34.730, lon: -86.586, pop: 491717}
+      - {name: Clarksville,  state: TN, lat: 36.530, lon: -87.359, pop: 320524}
+      - {name: Johnson City, state: TN, lat: 36.313, lon: -82.354, pop: 207280}
   DUK:
     name: Duke Energy Carolinas
     priority: core
     tz: America/New_York
     cities:
-      - {name: Charlotte,     state: NC, lat: 35.227, lon: -80.843, pop: 874579}
-      - {name: Greensboro,    state: NC, lat: 36.073, lon: -79.792, pop: 299035}
-      - {name: Durham,        state: NC, lat: 35.994, lon: -78.899, pop: 283506}
-      - {name: Winston-Salem, state: NC, lat: 36.100, lon: -80.244, pop: 249545}
-      - {name: Greenville,    state: SC, lat: 34.852, lon: -82.394, pop: 70720}
-      - {name: Spartanburg,   state: SC, lat: 34.950, lon: -81.932, pop: 38732}
+      - {name: Charlotte,     state: NC, lat: 35.227, lon: -80.843, pop: 2660162}
+      - {name: Greenville,    state: SC, lat: 34.852, lon: -82.394, pop: 928208}
+      - {name: Greensboro,    state: NC, lat: 36.073, lon: -79.792, pop: 776508}
+      - {name: Winston-Salem, state: NC, lat: 36.100, lon: -80.244, pop: 675981}
+      - {name: Durham,        state: NC, lat: 35.994, lon: -78.899, pop: 588910}
+      - {name: Hickory,       state: NC, lat: 35.733, lon: -81.341, pop: 365281}
+      - {name: Spartanburg,   state: SC, lat: 34.950, lon: -81.932, pop: 355237}
   FPL:
     name: Florida Power & Light
     priority: comparison
     tz: America/New_York
     notes: Northwest Florida (Gulf Power) consolidated mid-2022; Pensacola weighted from 2022-07.
     cities:
-      - {name: Miami,           state: FL, lat: 25.762, lon: -80.192, pop: 442241}
-      - {name: Fort Lauderdale, state: FL, lat: 26.122, lon: -80.137, pop: 182760}
-      - {name: West Palm Beach, state: FL, lat: 26.715, lon: -80.053, pop: 117415}
-      - {name: Fort Myers,      state: FL, lat: 26.640, lon: -81.872, pop: 86395}
-      - {name: Daytona Beach,   state: FL, lat: 29.211, lon: -81.023, pop: 72647}
-      - {name: Sarasota,        state: FL, lat: 27.336, lon: -82.531, pop: 54842}
-      - {name: Pensacola,       state: FL, lat: 30.421, lon: -87.217, pop: 54312, active_from: "2022-07-01"}
+      # South Florida is one MSA spanning three counties, so county populations are used.
+      - {name: Miami,           state: FL, lat: 25.762, lon: -80.192, pop: 2701751}
+      - {name: Fort Lauderdale, state: FL, lat: 26.122, lon: -80.137, pop: 1944404}
+      - {name: West Palm Beach, state: FL, lat: 26.715, lon: -80.053, pop: 1492202}
+      - {name: Sarasota,        state: FL, lat: 27.336, lon: -82.531, pop: 833724}
+      - {name: Fort Myers,      state: FL, lat: 26.640, lon: -81.872, pop: 760822}
+      - {name: Melbourne,       state: FL, lat: 28.084, lon: -80.608, pop: 606607}
+      - {name: Daytona Beach,   state: FL, lat: 29.211, lon: -81.023, pop: 553544}
+      - {name: Port St. Lucie,  state: FL, lat: 27.273, lon: -80.358, pop: 487654}
+      # Former Gulf Power territory (NW Florida); see SOCO Pensacola for the boundary date.
+      - {name: Pensacola,       state: FL, lat: 30.421, lon: -87.217, pop: 509902, active_from: "2022-07-01"}
+      - {name: Panama City,     state: FL, lat: 30.159, lon: -85.660, pop: 175210, active_from: "2022-07-01"}
 
 logging_only:
   ERCO:

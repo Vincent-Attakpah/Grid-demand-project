@@ -20,7 +20,8 @@ class City:
     lat: float
     lon: float
     pop: int
-    active_from: str | None = None  # ISO date; city weighted only from this date
+    active_from: str | None = None   # ISO date; city weighted only from this date (inclusive)
+    active_until: str | None = None  # ISO date; city weighted only before this date
 
 
 @dataclass(frozen=True)
