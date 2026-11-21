@@ -32,6 +32,18 @@ Environment variables:
 - `EIA_API_KEY` — free key from https://www.eia.gov/opendata/ (also a repository secret for Actions).
 - `NOWCASTER_DATA` — local data root; defaults to `~/nowcaster-data` (keep it out of OneDrive).
 
+## Live system
+
+* **Every hour** (GitHub Actions, right after the logger): `.github/workflows/forecast.yml`
+  runs `python -m nowcaster.live.run`, which forecasts the rest of today for each region,
+  computes the high-peak warning, scores earlier forecasts against published demand, and
+  writes everything to the `live` branch: `site/index.html` (dashboard),
+  `site/scores.json`, `history/`, `peaks/`, `actuals.csv`, `status.json`.
+* **Every month** (laptop): `scripts/monthly_refresh.ps1` downloads new data, refits the
+  models and uploads them to the GitHub release `live-models`.
+* Before 10 AM Eastern there is no forecast yet: the day-ahead forecast counts as available
+  from then (placeholder until the logger measures it).
+
 ## Data and attribution
 
 Demand data: U.S. Energy Information Administration, Form EIA-930.

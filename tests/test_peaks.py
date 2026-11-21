@@ -54,3 +54,29 @@ def test_summary_and_calibration():
     inside = (s["peak_actual"] >= s["lo_M5"]) & (s["peak_actual"] <= s["hi_M5"])
     assert 0.75 <= inside.mean() <= 1.0
     assert s["p_M5"].between(0, 1).all()
+
+
+def test_yearly_threshold_uses_only_earlier_years():
+    from nowcaster.models.peaks import yearly_thresholds
+    days = pd.date_range("2023-01-01", "2026-12-31", freq="D")
+    pk = pd.Series(np.random.default_rng(1).normal(30000, 2000, len(days)), index=days)
+    base = yearly_thresholds(pk, [2026])
+    pert = pk.copy()
+    pert[pert.index.year == 2026] *= 1.5
+    pd.testing.assert_frame_equal(base, yearly_thresholds(pert, [2026]))
+    ctrl = pk.copy()
+    ctrl[ctrl.index.year == 2025] *= 1.5                      # control: an earlier year moves it
+    assert not np.allclose(base.to_numpy(), yearly_thresholds(ctrl, [2026]).to_numpy())
+
+
+def test_stretch_factor_uses_only_earlier_days():
+    from nowcaster.models.peaks import inflation_factors
+    pred = synth_pred(days=150)
+    meta, arrs, e = ens_for(pred)
+    pk = actual_peak(arrs)
+    base = inflation_factors(meta, e, pk, days=60)
+    last = pd.DatetimeIndex(meta["op_day"]).to_period("M") == pd.DatetimeIndex(meta["op_day"]).to_period("M").max()
+    pert = pk.copy()
+    pert[last] *= 1.3                                         # this month's own outcomes
+    np.testing.assert_array_equal(base[last], inflation_factors(meta, e, pert, days=60)[last])
+    assert (base >= 0.8).all() and (base <= 3.0).all()

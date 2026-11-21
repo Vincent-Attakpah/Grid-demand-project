@@ -16,7 +16,14 @@ fully published before the issue (its last hour + 3 h is before 03:00 of day d).
   R  = B4b (Trick 2) point forecasts + B4b error paths   (reference: same method, Trick 2)
 
 High-peak event: remaining peak > the 90th percentile of daily peaks in that calendar month
-over THRESHOLD_YEARS (fixed, before the evaluation years).
+over the two calendar years before the issue's year (refreshed every January, so demand
+growth does not make the line stale).
+
+Calibration (`inflation_factors`): the raw ensembles were a little too narrow (90% ranges
+caught 85-88%). At each month start, a stretch factor c is chosen from the previous
+CAL_DAYS days of issues (all fully published) so that their 5-95% ranges would have caught
+90%; every ensemble in the month is then stretched around its median by c. The same rule
+is applied to M5 and R.
 """
 
 from __future__ import annotations
@@ -30,6 +37,8 @@ LIB_DAYS = 60
 MIN_LIB = 20
 H = 25
 MIN_ACTUAL_SHARE = 0.8
+CAL_DAYS = 90
+GRID = np.round(np.arange(0.8, 3.01, 0.05), 2)
 
 
 def issue_arrays(pred: pd.DataFrame, cols: list[str], tz: str) -> tuple[pd.DataFrame, dict]:
@@ -89,6 +98,59 @@ def monthly_thresholds(daily_peaks: pd.Series, q: float = 0.9) -> pd.Series:
     return s.groupby(pd.DatetimeIndex(s.index).month).quantile(q)
 
 
+def yearly_thresholds(daily_peaks: pd.Series, years, q: float = 0.9, back: int = 2) -> pd.DataFrame:
+    """Threshold table: index = year Y, columns = month; from daily peaks in Y-back .. Y-1."""
+    s = daily_peaks.dropna()
+    yr = pd.DatetimeIndex(s.index).year
+    rows = {}
+    for y in years:
+        sel = s[(yr >= y - back) & (yr < y)]
+        rows[y] = monthly_thresholds(sel, q).reindex(range(1, 13))
+    return pd.DataFrame(rows).T
+
+
+def threshold_for(op_day: pd.Series, thresholds) -> np.ndarray:
+    """Per-issue threshold from a month Series or a (year x month) table."""
+    d = pd.DatetimeIndex(op_day)
+    if isinstance(thresholds, pd.DataFrame):
+        t = thresholds.reindex(index=d.year)
+        return np.array([t.iat[i, t.columns.get_loc(m)] if m in t.columns else np.nan
+                         for i, m in enumerate(d.month)], float)
+    return thresholds.reindex(d.month).to_numpy(float)
+
+
+def best_factor(ens, idx, actual, target=0.9) -> float:
+    """Smallest stretch in GRID whose past coverage reaches the target (1.0 if too few issues)."""
+    idx = [i for i in idx if ens[i] is not None and np.isfinite(actual[i])]
+    if len(idx) < 200:
+        return 1.0
+    s = [ens[i] for i in idx]
+    a = actual[idx]
+    med = np.array([np.median(x) for x in s])
+    q = np.array([np.quantile(x, [0.05, 0.95]) for x in s])
+    for c in GRID:
+        lo, hi = med + c * (q[:, 0] - med), med + c * (q[:, 1] - med)
+        if np.mean((a >= lo) & (a <= hi)) >= target:
+            return float(c)
+    return float(GRID[-1])
+
+
+def inflation_factors(meta: pd.DataFrame, ens: list, actual: np.ndarray, days: int = CAL_DAYS) -> np.ndarray:
+    """Per issue: the stretch factor chosen at its month start from the previous `days` days."""
+    od = pd.DatetimeIndex(meta["op_day"])
+    month = od.to_period("M")
+    out = np.ones(len(meta))
+    for mon in month.unique():
+        m0 = mon.to_timestamp()
+        past = np.flatnonzero((od >= m0 - pd.Timedelta(days=days)) & (od < m0))
+        out[np.asarray(month == mon)] = best_factor(ens, past, actual)
+    return out
+
+
+def stretch(ens: list, c: np.ndarray) -> list:
+    return [None if s is None else np.median(s) + c[i] * (s - np.median(s)) for i, s in enumerate(ens)]
+
+
 def summarize(meta, arrs, ens: dict[str, list], thresholds: pd.Series) -> pd.DataFrame:
     """Per issue: actual peak, point/median peaks, 5-95% range, P(exceed), event outcome."""
     out = meta.copy()
@@ -99,7 +161,7 @@ def summarize(meta, arrs, ens: dict[str, list], thresholds: pd.Series) -> pd.Dat
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", RuntimeWarning)
                 out[f"peak_point_{col}"] = np.nanmax(np.where(pres, arrs[col], np.nan), axis=1)
-    out["threshold"] = thresholds.reindex(out["op_day"].dt.month).to_numpy()
+    out["threshold"] = threshold_for(out["op_day"], thresholds)
     for name, e in ens.items():
         med, lo, hi, pr = (np.full(len(out), np.nan) for _ in range(4))
         for i, s in enumerate(e):
