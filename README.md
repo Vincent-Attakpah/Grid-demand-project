@@ -41,6 +41,7 @@ Environment variables:
   `site/scores.json`, `history/`, `peaks/`, `actuals.csv`, `status.json`.
 * **Every month** (laptop): `scripts/monthly_refresh.ps1` downloads new data, refits the
   models and uploads them to the GitHub release `live-models`.
+* To view the dashboard while the repo is private: `powershell -File scripts/open_dashboard.ps1`.
 * Before 10 AM Eastern there is no forecast yet: the day-ahead forecast counts as available
   from then (placeholder until the logger measures it).
 
