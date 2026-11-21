@@ -84,14 +84,14 @@ def m2_predict(fitted, p: pd.DataFrame) -> np.ndarray:
 M3_COLS = BASE + ["da"]
 
 
-def m3_fit(train: pd.DataFrame):
+def m3_fit(train: pd.DataFrame, wanted: list[str] = M3_COLS):
     coefs = b4b_fit(train)
     t = train[train["da_posted"].astype(bool)].dropna(subset=["actual", "da"]).copy()
     if not coefs or len(t) < MIN_ROWS:
         return None
     t["_base"] = b4b_predict(coefs, t)
     t = t.dropna(subset=["_base"])
-    cols = _cols(t, M3_COLS)
+    cols = _cols(t, wanted)
     return coefs, cols, _train(t, cols, (t["actual"] - t["_base"]).to_numpy(float))
 
 
@@ -105,3 +105,11 @@ def m3_predict(fitted, p: pd.DataFrame) -> np.ndarray:
 
 
 MODELS = {"M2": (m2_fit, m2_predict), "M3": (m3_fit, m3_predict)}
+
+# Ablations: M3 with inputs removed, everything else identical (same rows, settings, seed).
+M3_NO_WEATHER = [c for c in M3_COLS if c not in WEATHER]
+M3_DEMAND_ONLY = [c for c in M3_NO_WEATHER if c not in CALENDAR]
+ABLATIONS = {
+    "M3_noWx": (lambda t: m3_fit(t, M3_NO_WEATHER), m3_predict),
+    "M3_demandOnly": (lambda t: m3_fit(t, M3_DEMAND_ONLY), m3_predict),
+}
