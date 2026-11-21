@@ -60,9 +60,9 @@ jobs:
           if git ls-remote --exit-code --heads "$REPO_URL" live >/dev/null 2>&1; then
             git clone --quiet --depth 1 --branch live "$REPO_URL" live
           else
-            mkdir live && cd live
-            git init --quiet -b live
-            git remote add origin "$REPO_URL"
+            mkdir live
+            git -C live init --quiet -b live
+            git -C live remote add origin "$REPO_URL"
           fi
           cd live
           git config user.name "nowcaster-forecast"
@@ -79,7 +79,7 @@ jobs:
         if: always()
         run: |
           set -uo pipefail
-          cd live
+          cd live || { echo "no live checkout"; exit 1; }
           git add -A
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit --quiet -m "forecast $(date -u +%Y-%m-%dT%H:%MZ) run ${{ github.run_id }}"
