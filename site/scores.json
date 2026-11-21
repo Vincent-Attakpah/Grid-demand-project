@@ -42,7 +42,14 @@
     }
    }
   },
-  "peaks": {}
+  "peaks": {
+   "last_30_days": {
+    "issues_scored": 0
+   },
+   "since_start": {
+    "issues_scored": 0
+   }
+  }
  },
  "TVA": {
   "hourly": {
@@ -87,7 +94,14 @@
     }
    }
   },
-  "peaks": {}
+  "peaks": {
+   "last_30_days": {
+    "issues_scored": 0
+   },
+   "since_start": {
+    "issues_scored": 0
+   }
+  }
  },
  "DUK": {
   "hourly": {
@@ -132,7 +146,14 @@
     }
    }
   },
-  "peaks": {}
+  "peaks": {
+   "last_30_days": {
+    "issues_scored": 0
+   },
+   "since_start": {
+    "issues_scored": 0
+   }
+  }
  },
  "FPL": {
   "hourly": {
@@ -177,6 +198,13 @@
     }
    }
   },
-  "peaks": {}
+  "peaks": {
+   "last_30_days": {
+    "issues_scored": 0
+   },
+   "since_start": {
+    "issues_scored": 0
+   }
+  }
  }
 }
