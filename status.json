@@ -1,8 +1,8 @@
 {
- "issue_utc": "2026-11-21T12:17:00+00:00",
- "ran_at_utc": "2026-11-21T12:20:08+00:00",
+ "issue_utc": "2026-11-21T13:17:00+00:00",
+ "ran_at_utc": "2026-11-21T13:20:07+00:00",
  "trained_at": "2026-11-21 06:53:21+00:00",
  "errors": {},
- "new_forecasts": 70,
+ "new_forecasts": 66,
  "already_issued": []
 }
