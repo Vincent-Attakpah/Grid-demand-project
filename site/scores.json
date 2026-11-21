@@ -1,0 +1,182 @@
+{
+ "SOCO": {
+  "hourly": {
+   "last_30_days": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   },
+   "since_start": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   }
+  },
+  "peaks": {}
+ },
+ "TVA": {
+  "hourly": {
+   "last_30_days": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   },
+   "since_start": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   }
+  },
+  "peaks": {}
+ },
+ "DUK": {
+  "hourly": {
+   "last_30_days": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   },
+   "since_start": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   }
+  },
+  "peaks": {}
+ },
+ "FPL": {
+  "hourly": {
+   "last_30_days": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   },
+   "since_start": {
+    "1-6 h ahead": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    },
+    "all hours": {
+     "hours_scored": 0,
+     "days": 0,
+     "mae_M3": null,
+     "mae_B4b": null,
+     "mae_da": null,
+     "cover90": null,
+     "cover50": null
+    }
+   }
+  },
+  "peaks": {}
+ }
+}
