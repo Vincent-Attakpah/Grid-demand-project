@@ -38,7 +38,12 @@ def rolling_origin(panel: pd.DataFrame, models: dict[str, Model], start, end,
             train_mask &= target >= t0
         train, test = panel[train_mask], panel[test_mask].copy()
         for name, (fit, predict) in models.items():
-            test[name] = predict(fit(train), test)
+            pred = predict(fit(train), test)
+            if isinstance(pred, pd.DataFrame):      # multi-output (e.g. quantiles): name_<col>
+                for c in pred.columns:
+                    test[f"{name}_{c}"] = pred[c].to_numpy()
+            else:
+                test[name] = pred
         test["origin"] = m0
         out.append(test)
     return pd.concat(out, ignore_index=True) if out else panel.iloc[:0]
