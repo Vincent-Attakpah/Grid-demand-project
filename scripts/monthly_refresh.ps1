@@ -14,7 +14,10 @@ Set-Location $repo
 
 function Invoke-Step($name, [string[]]$pyArgs) {
     "$(Get-Date -Format s) $name" | Tee-Object -FilePath $log -Append
-    & $py @pyArgs 2>&1 | Tee-Object -FilePath $log -Append
+    # Python logs progress to stderr; Windows PowerShell would treat that as an error under
+    # "Stop", so inside a step only the exit code decides success.
+    $ErrorActionPreference = "Continue"
+    & $py @pyArgs 2>&1 | ForEach-Object { "$_" } | Tee-Object -FilePath $log -Append
     if ($LASTEXITCODE -ne 0) { throw "step failed: $name (see $log)" }
 }
 
