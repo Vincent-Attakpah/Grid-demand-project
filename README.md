@@ -39,7 +39,8 @@ Environment variables:
   computes the high-peak warning, scores earlier forecasts against published demand, and
   writes everything to the `live` branch: `site/index.html` (dashboard),
   `site/scores.json`, `history/`, `peaks/`, `actuals.csv`, `status.json`.
-* **Every month** (laptop): `scripts/monthly_refresh.ps1` downloads new data, refits the
+* **Every month** (laptop, scheduled for the 2nd at 9 AM by `scripts/install_refresh_task.ps1`):
+  `scripts/monthly_refresh.ps1` downloads new data, refits the
   models and uploads them to the GitHub release `live-models`.
 * To view the dashboard while the repo is private: `powershell -File scripts/open_dashboard.ps1`.
 * Before 10 AM Eastern there is no forecast yet: the day-ahead forecast counts as available
