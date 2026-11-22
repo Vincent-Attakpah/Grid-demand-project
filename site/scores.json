@@ -3,59 +3,79 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 22,
      "days": 1,
-     "mae_M3": 719.1875,
-     "mae_B4b": 847.9562,
-     "mae_da": 387.375,
-     "skill_vs_trick2": 0.1519,
-     "skill_vs_utility": -0.8566,
-     "cover90": 0.6875,
-     "cover50": 0.1875
+     "mae_M3": 580.6636,
+     "mae_B4b": 750.6182,
+     "mae_da": 380.0,
+     "skill_vs_trick2": 0.2264,
+     "skill_vs_utility": -0.5281,
+     "cover90": 0.6364,
+     "cover50": 0.1364
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 40,
      "days": 1,
-     "mae_M3": 591.4417,
-     "mae_B4b": 734.3667,
-     "mae_da": 304.8333,
-     "skill_vs_trick2": 0.1946,
-     "skill_vs_utility": -0.9402,
-     "cover90": 0.7917,
-     "cover50": 0.4167
+     "mae_M3": 462.5875,
+     "mae_B4b": 651.03,
+     "mae_da": 319.3,
+     "skill_vs_trick2": 0.2895,
+     "skill_vs_utility": -0.4488,
+     "cover90": 0.675,
+     "cover50": 0.275
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 22,
      "days": 1,
-     "mae_M3": 719.1875,
-     "mae_B4b": 847.9562,
-     "mae_da": 387.375,
-     "skill_vs_trick2": 0.1519,
-     "skill_vs_utility": -0.8566,
-     "cover90": 0.6875,
-     "cover50": 0.1875
+     "mae_M3": 580.6636,
+     "mae_B4b": 750.6182,
+     "mae_da": 380.0,
+     "skill_vs_trick2": 0.2264,
+     "skill_vs_utility": -0.5281,
+     "cover90": 0.6364,
+     "cover50": 0.1364
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 40,
      "days": 1,
-     "mae_M3": 591.4417,
-     "mae_B4b": 734.3667,
-     "mae_da": 304.8333,
-     "skill_vs_trick2": 0.1946,
-     "skill_vs_utility": -0.9402,
-     "cover90": 0.7917,
-     "cover50": 0.4167
+     "mae_M3": 462.5875,
+     "mae_B4b": 651.03,
+     "mae_da": 319.3,
+     "skill_vs_trick2": 0.2895,
+     "skill_vs_utility": -0.4488,
+     "cover90": 0.675,
+     "cover50": 0.275
     }
    }
   },
   "peaks": {
    "last_30_days": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 283.625,
+    "peak_mae_trick2": 480.275,
+    "peak_mae_utility": 219.0,
+    "peak_cover90": 0.75,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    },
    "since_start": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 283.625,
+    "peak_mae_trick2": 480.275,
+    "peak_mae_utility": 219.0,
+    "peak_cover90": 0.75,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    }
   }
  },
@@ -63,59 +83,79 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 22,
      "days": 1,
-     "mae_M3": 163.575,
-     "mae_B4b": 229.4625,
-     "mae_da": 159.75,
-     "skill_vs_trick2": 0.2871,
-     "skill_vs_utility": -0.0239,
-     "cover90": 0.9375,
-     "cover50": 0.625
+     "mae_M3": 206.4091,
+     "mae_B4b": 274.4364,
+     "mae_da": 162.8636,
+     "skill_vs_trick2": 0.2479,
+     "skill_vs_utility": -0.2674,
+     "cover90": 0.9545,
+     "cover50": 0.4091
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 40,
      "days": 1,
-     "mae_M3": 196.2417,
-     "mae_B4b": 252.2375,
-     "mae_da": 184.25,
-     "skill_vs_trick2": 0.222,
-     "skill_vs_utility": -0.0651,
-     "cover90": 0.875,
-     "cover50": 0.5833
+     "mae_M3": 241.64,
+     "mae_B4b": 318.5975,
+     "mae_da": 199.425,
+     "skill_vs_trick2": 0.2416,
+     "skill_vs_utility": -0.2117,
+     "cover90": 0.975,
+     "cover50": 0.275
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 22,
      "days": 1,
-     "mae_M3": 163.575,
-     "mae_B4b": 229.4625,
-     "mae_da": 159.75,
-     "skill_vs_trick2": 0.2871,
-     "skill_vs_utility": -0.0239,
-     "cover90": 0.9375,
-     "cover50": 0.625
+     "mae_M3": 206.4091,
+     "mae_B4b": 274.4364,
+     "mae_da": 162.8636,
+     "skill_vs_trick2": 0.2479,
+     "skill_vs_utility": -0.2674,
+     "cover90": 0.9545,
+     "cover50": 0.4091
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 40,
      "days": 1,
-     "mae_M3": 196.2417,
-     "mae_B4b": 252.2375,
-     "mae_da": 184.25,
-     "skill_vs_trick2": 0.222,
-     "skill_vs_utility": -0.0651,
-     "cover90": 0.875,
-     "cover50": 0.5833
+     "mae_M3": 241.64,
+     "mae_B4b": 318.5975,
+     "mae_da": 199.425,
+     "skill_vs_trick2": 0.2416,
+     "skill_vs_utility": -0.2117,
+     "cover90": 0.975,
+     "cover50": 0.275
     }
    }
   },
   "peaks": {
    "last_30_days": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 330.725,
+    "peak_mae_trick2": 363.425,
+    "peak_mae_utility": 296.5,
+    "peak_cover90": 1.0,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    },
    "since_start": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 330.725,
+    "peak_mae_trick2": 363.425,
+    "peak_mae_utility": 296.5,
+    "peak_cover90": 1.0,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    }
   }
  },
@@ -123,59 +163,79 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 21,
      "days": 1,
-     "mae_M3": 106.0312,
-     "mae_B4b": 77.0812,
-     "mae_da": 176.6875,
-     "skill_vs_trick2": -0.3756,
-     "skill_vs_utility": 0.3999,
+     "mae_M3": 92.1143,
+     "mae_B4b": 67.5476,
+     "mae_da": 145.619,
+     "skill_vs_trick2": -0.3637,
+     "skill_vs_utility": 0.3674,
      "cover90": 1.0,
-     "cover50": 0.9375
+     "cover50": 1.0
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 36,
      "days": 1,
-     "mae_M3": 100.9167,
-     "mae_B4b": 78.5958,
-     "mae_da": 151.0,
-     "skill_vs_trick2": -0.284,
-     "skill_vs_utility": 0.3317,
+     "mae_M3": 88.7167,
+     "mae_B4b": 64.6667,
+     "mae_da": 114.6111,
+     "skill_vs_trick2": -0.3719,
+     "skill_vs_utility": 0.2259,
      "cover90": 1.0,
-     "cover50": 0.9167
+     "cover50": 1.0
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 21,
      "days": 1,
-     "mae_M3": 106.0312,
-     "mae_B4b": 77.0812,
-     "mae_da": 176.6875,
-     "skill_vs_trick2": -0.3756,
-     "skill_vs_utility": 0.3999,
+     "mae_M3": 92.1143,
+     "mae_B4b": 67.5476,
+     "mae_da": 145.619,
+     "skill_vs_trick2": -0.3637,
+     "skill_vs_utility": 0.3674,
      "cover90": 1.0,
-     "cover50": 0.9375
+     "cover50": 1.0
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 36,
      "days": 1,
-     "mae_M3": 100.9167,
-     "mae_B4b": 78.5958,
-     "mae_da": 151.0,
-     "skill_vs_trick2": -0.284,
-     "skill_vs_utility": 0.3317,
+     "mae_M3": 88.7167,
+     "mae_B4b": 64.6667,
+     "mae_da": 114.6111,
+     "skill_vs_trick2": -0.3719,
+     "skill_vs_utility": 0.2259,
      "cover90": 1.0,
-     "cover50": 0.9167
+     "cover50": 1.0
     }
    }
   },
   "peaks": {
    "last_30_days": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 72.8,
+    "peak_mae_trick2": 60.925,
+    "peak_mae_utility": 61.75,
+    "peak_cover90": 1.0,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    },
    "since_start": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 72.8,
+    "peak_mae_trick2": 60.925,
+    "peak_mae_utility": 61.75,
+    "peak_cover90": 1.0,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    }
   }
  },
@@ -183,59 +243,79 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 21,
      "days": 1,
-     "mae_M3": 547.3312,
-     "mae_B4b": 548.575,
-     "mae_da": 584.4375,
-     "skill_vs_trick2": 0.0023,
-     "skill_vs_utility": 0.0635,
-     "cover90": 0.875,
-     "cover50": 0.4375
+     "mae_M3": 425.8476,
+     "mae_B4b": 481.2333,
+     "mae_da": 533.381,
+     "skill_vs_trick2": 0.1151,
+     "skill_vs_utility": 0.2016,
+     "cover90": 0.9048,
+     "cover50": 0.5238
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 36,
      "days": 1,
-     "mae_M3": 440.5417,
-     "mae_B4b": 428.8417,
-     "mae_da": 497.9167,
-     "skill_vs_trick2": -0.0273,
-     "skill_vs_utility": 0.1152,
-     "cover90": 0.9167,
-     "cover50": 0.5833
+     "mae_M3": 344.3306,
+     "mae_B4b": 338.5278,
+     "mae_da": 462.4167,
+     "skill_vs_trick2": -0.0171,
+     "skill_vs_utility": 0.2554,
+     "cover90": 0.9444,
+     "cover50": 0.5278
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 16,
+     "hours_scored": 21,
      "days": 1,
-     "mae_M3": 547.3312,
-     "mae_B4b": 548.575,
-     "mae_da": 584.4375,
-     "skill_vs_trick2": 0.0023,
-     "skill_vs_utility": 0.0635,
-     "cover90": 0.875,
-     "cover50": 0.4375
+     "mae_M3": 425.8476,
+     "mae_B4b": 481.2333,
+     "mae_da": 533.381,
+     "skill_vs_trick2": 0.1151,
+     "skill_vs_utility": 0.2016,
+     "cover90": 0.9048,
+     "cover50": 0.5238
     },
     "all hours": {
-     "hours_scored": 24,
+     "hours_scored": 36,
      "days": 1,
-     "mae_M3": 440.5417,
-     "mae_B4b": 428.8417,
-     "mae_da": 497.9167,
-     "skill_vs_trick2": -0.0273,
-     "skill_vs_utility": 0.1152,
-     "cover90": 0.9167,
-     "cover50": 0.5833
+     "mae_M3": 344.3306,
+     "mae_B4b": 338.5278,
+     "mae_da": 462.4167,
+     "skill_vs_trick2": -0.0171,
+     "skill_vs_utility": 0.2554,
+     "cover90": 0.9444,
+     "cover50": 0.5278
     }
    }
   },
   "peaks": {
    "last_30_days": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 691.0,
+    "peak_mae_trick2": 596.925,
+    "peak_mae_utility": 592.75,
+    "peak_cover90": 0.75,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    },
    "since_start": {
-    "issues_scored": 0
+    "issues_scored": 4,
+    "days": 1,
+    "high_days": 0,
+    "peak_mae_M5": 691.0,
+    "peak_mae_trick2": 596.925,
+    "peak_mae_utility": 592.75,
+    "peak_cover90": 0.75,
+    "brier": 0.0,
+    "hits": 0,
+    "misses": 0,
+    "false_alarms": 0
    }
   }
  }
