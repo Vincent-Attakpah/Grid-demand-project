@@ -14,15 +14,15 @@
      "cover50": 0.1273
     },
     "all hours": {
-     "hours_scored": 92,
+     "hours_scored": 93,
      "days": 4,
-     "mae_M3": 725.9087,
-     "mae_B4b": 685.2,
-     "mae_da": 636.6087,
-     "skill_vs_trick2": -0.0594,
-     "skill_vs_utility": -0.1403,
-     "cover90": 0.6304,
-     "cover50": 0.1957
+     "mae_M3": 722.9677,
+     "mae_B4b": 683.7151,
+     "mae_da": 630.129,
+     "skill_vs_trick2": -0.0574,
+     "skill_vs_utility": -0.1473,
+     "cover90": 0.6344,
+     "cover50": 0.2043
     }
    },
    "since_start": {
@@ -38,15 +38,15 @@
      "cover50": 0.1273
     },
     "all hours": {
-     "hours_scored": 92,
+     "hours_scored": 93,
      "days": 4,
-     "mae_M3": 725.9087,
-     "mae_B4b": 685.2,
-     "mae_da": 636.6087,
-     "skill_vs_trick2": -0.0594,
-     "skill_vs_utility": -0.1403,
-     "cover90": 0.6304,
-     "cover50": 0.1957
+     "mae_M3": 722.9677,
+     "mae_B4b": 683.7151,
+     "mae_da": 630.129,
+     "skill_vs_trick2": -0.0574,
+     "skill_vs_utility": -0.1473,
+     "cover90": 0.6344,
+     "cover50": 0.2043
     }
    }
   },
@@ -94,15 +94,15 @@
      "cover50": 0.3818
     },
     "all hours": {
-     "hours_scored": 92,
+     "hours_scored": 93,
      "days": 4,
-     "mae_M3": 242.8228,
-     "mae_B4b": 265.8065,
-     "mae_da": 232.2065,
-     "skill_vs_trick2": 0.0865,
-     "skill_vs_utility": -0.0457,
-     "cover90": 0.9239,
-     "cover50": 0.3261
+     "mae_M3": 244.1602,
+     "mae_B4b": 264.6989,
+     "mae_da": 233.8387,
+     "skill_vs_trick2": 0.0776,
+     "skill_vs_utility": -0.0441,
+     "cover90": 0.9247,
+     "cover50": 0.3226
     }
    },
    "since_start": {
@@ -118,15 +118,15 @@
      "cover50": 0.3818
     },
     "all hours": {
-     "hours_scored": 92,
+     "hours_scored": 93,
      "days": 4,
-     "mae_M3": 242.8228,
-     "mae_B4b": 265.8065,
-     "mae_da": 232.2065,
-     "skill_vs_trick2": 0.0865,
-     "skill_vs_utility": -0.0457,
-     "cover90": 0.9239,
-     "cover50": 0.3261
+     "mae_M3": 244.1602,
+     "mae_B4b": 264.6989,
+     "mae_da": 233.8387,
+     "skill_vs_trick2": 0.0776,
+     "skill_vs_utility": -0.0441,
+     "cover90": 0.9247,
+     "cover50": 0.3226
     }
    }
   },
@@ -174,15 +174,15 @@
      "cover50": 0.6667
     },
     "all hours": {
-     "hours_scored": 82,
+     "hours_scored": 83,
      "days": 4,
-     "mae_M3": 119.5573,
-     "mae_B4b": 151.7488,
-     "mae_da": 169.1951,
-     "skill_vs_trick2": 0.2121,
-     "skill_vs_utility": 0.2934,
-     "cover90": 0.9756,
-     "cover50": 0.7073
+     "mae_M3": 124.1916,
+     "mae_B4b": 158.8386,
+     "mae_da": 175.7349,
+     "skill_vs_trick2": 0.2181,
+     "skill_vs_utility": 0.2933,
+     "cover90": 0.9518,
+     "cover50": 0.6988
     }
    },
    "since_start": {
@@ -198,15 +198,15 @@
      "cover50": 0.6667
     },
     "all hours": {
-     "hours_scored": 82,
+     "hours_scored": 83,
      "days": 4,
-     "mae_M3": 119.5573,
-     "mae_B4b": 151.7488,
-     "mae_da": 169.1951,
-     "skill_vs_trick2": 0.2121,
-     "skill_vs_utility": 0.2934,
-     "cover90": 0.9756,
-     "cover50": 0.7073
+     "mae_M3": 124.1916,
+     "mae_B4b": 158.8386,
+     "mae_da": 175.7349,
+     "skill_vs_trick2": 0.2181,
+     "skill_vs_utility": 0.2933,
+     "cover90": 0.9518,
+     "cover50": 0.6988
     }
    }
   },
@@ -254,15 +254,15 @@
      "cover50": 0.5882
     },
     "all hours": {
-     "hours_scored": 82,
+     "hours_scored": 83,
      "days": 4,
-     "mae_M3": 370.689,
-     "mae_B4b": 396.922,
-     "mae_da": 551.2683,
-     "skill_vs_trick2": 0.0661,
-     "skill_vs_utility": 0.3276,
-     "cover90": 0.9512,
-     "cover50": 0.6585
+     "mae_M3": 369.0554,
+     "mae_B4b": 394.4904,
+     "mae_da": 545.253,
+     "skill_vs_trick2": 0.0645,
+     "skill_vs_utility": 0.3231,
+     "cover90": 0.9518,
+     "cover50": 0.6506
     }
    },
    "since_start": {
@@ -278,15 +278,15 @@
      "cover50": 0.5882
     },
     "all hours": {
-     "hours_scored": 82,
+     "hours_scored": 83,
      "days": 4,
-     "mae_M3": 370.689,
-     "mae_B4b": 396.922,
-     "mae_da": 551.2683,
-     "skill_vs_trick2": 0.0661,
-     "skill_vs_utility": 0.3276,
-     "cover90": 0.9512,
-     "cover50": 0.6585
+     "mae_M3": 369.0554,
+     "mae_B4b": 394.4904,
+     "mae_da": 545.253,
+     "skill_vs_trick2": 0.0645,
+     "skill_vs_utility": 0.3231,
+     "cover90": 0.9518,
+     "cover50": 0.6506
     }
    }
   },
