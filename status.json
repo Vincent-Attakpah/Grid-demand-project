@@ -1,12 +1,8 @@
 {
- "issue_utc": "2026-11-26T01:17:00+00:00",
- "ran_at_utc": "2026-11-26T01:33:16+00:00",
+ "issue_utc": "2026-11-27T18:17:00+00:00",
+ "ran_at_utc": "2026-11-27T18:57:41+00:00",
  "trained_at": "2026-11-22 15:51:10+00:00",
- "errors": {
-  "SOCO": "ReadTimeout: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=30.0)",
-  "TVA": "ReadTimeout: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=30.0)",
-  "FPL": "ReadTimeout: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=30.0)"
- },
- "new_forecasts": 4,
+ "errors": {},
+ "new_forecasts": 46,
  "already_issued": []
 }
