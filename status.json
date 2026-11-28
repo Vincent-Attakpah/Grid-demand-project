@@ -1,13 +1,8 @@
 {
- "issue_utc": "2026-11-28T01:17:00+00:00",
- "ran_at_utc": "2026-11-28T01:59:41+00:00",
+ "issue_utc": "2026-11-28T10:17:00+00:00",
+ "ran_at_utc": "2026-11-28T10:25:17+00:00",
  "trained_at": "2026-11-22 15:51:10+00:00",
  "errors": {},
- "new_forecasts": 0,
- "already_issued": [
-  "DUK",
-  "FPL",
-  "SOCO",
-  "TVA"
- ]
+ "new_forecasts": 78,
+ "already_issued": []
 }
