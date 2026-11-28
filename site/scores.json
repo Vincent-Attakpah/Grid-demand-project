@@ -3,50 +3,50 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 63,
-     "days": 4,
-     "mae_M3": 647.427,
-     "mae_B4b": 607.8921,
-     "mae_da": 714.9841,
-     "skill_vs_trick2": -0.065,
-     "skill_vs_utility": 0.0945,
-     "cover90": 0.6825,
-     "cover50": 0.2222
+     "hours_scored": 64,
+     "days": 5,
+     "mae_M3": 645.8469,
+     "mae_B4b": 603.75,
+     "mae_da": 725.6719,
+     "skill_vs_trick2": -0.0697,
+     "skill_vs_utility": 0.11,
+     "cover90": 0.6875,
+     "cover50": 0.2188
     },
     "all hours": {
-     "hours_scored": 105,
-     "days": 4,
-     "mae_M3": 606.2752,
-     "mae_B4b": 571.88,
-     "mae_da": 660.5143,
-     "skill_vs_trick2": -0.0601,
-     "skill_vs_utility": 0.0821,
-     "cover90": 0.6667,
-     "cover50": 0.2762
+     "hours_scored": 106,
+     "days": 5,
+     "mae_M3": 605.7094,
+     "mae_B4b": 569.7189,
+     "mae_da": 667.4811,
+     "skill_vs_trick2": -0.0632,
+     "skill_vs_utility": 0.0925,
+     "cover90": 0.6698,
+     "cover50": 0.2736
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 63,
-     "days": 4,
-     "mae_M3": 647.427,
-     "mae_B4b": 607.8921,
-     "mae_da": 714.9841,
-     "skill_vs_trick2": -0.065,
-     "skill_vs_utility": 0.0945,
-     "cover90": 0.6825,
-     "cover50": 0.2222
+     "hours_scored": 64,
+     "days": 5,
+     "mae_M3": 645.8469,
+     "mae_B4b": 603.75,
+     "mae_da": 725.6719,
+     "skill_vs_trick2": -0.0697,
+     "skill_vs_utility": 0.11,
+     "cover90": 0.6875,
+     "cover50": 0.2188
     },
     "all hours": {
-     "hours_scored": 105,
-     "days": 4,
-     "mae_M3": 606.2752,
-     "mae_B4b": 571.88,
-     "mae_da": 660.5143,
-     "skill_vs_trick2": -0.0601,
-     "skill_vs_utility": 0.0821,
-     "cover90": 0.6667,
-     "cover50": 0.2762
+     "hours_scored": 106,
+     "days": 5,
+     "mae_M3": 605.7094,
+     "mae_B4b": 569.7189,
+     "mae_da": 667.4811,
+     "skill_vs_trick2": -0.0632,
+     "skill_vs_utility": 0.0925,
+     "cover90": 0.6698,
+     "cover50": 0.2736
     }
    }
   },
@@ -83,50 +83,50 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 67,
+     "hours_scored": 69,
      "days": 5,
-     "mae_M3": 238.2627,
-     "mae_B4b": 239.2657,
-     "mae_da": 233.4179,
-     "skill_vs_trick2": 0.0042,
-     "skill_vs_utility": -0.0208,
-     "cover90": 0.9254,
-     "cover50": 0.3433
+     "mae_M3": 253.8696,
+     "mae_B4b": 253.2942,
+     "mae_da": 231.2609,
+     "skill_vs_trick2": -0.0023,
+     "skill_vs_utility": -0.0978,
+     "cover90": 0.9275,
+     "cover50": 0.3333
     },
     "all hours": {
-     "hours_scored": 109,
+     "hours_scored": 111,
      "days": 5,
-     "mae_M3": 241.933,
-     "mae_B4b": 256.2046,
-     "mae_da": 240.0,
-     "skill_vs_trick2": 0.0557,
-     "skill_vs_utility": -0.0081,
-     "cover90": 0.9174,
-     "cover50": 0.3028
+     "mae_M3": 251.5685,
+     "mae_B4b": 264.6198,
+     "mae_da": 238.5405,
+     "skill_vs_trick2": 0.0493,
+     "skill_vs_utility": -0.0546,
+     "cover90": 0.9189,
+     "cover50": 0.2973
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 67,
+     "hours_scored": 69,
      "days": 5,
-     "mae_M3": 238.2627,
-     "mae_B4b": 239.2657,
-     "mae_da": 233.4179,
-     "skill_vs_trick2": 0.0042,
-     "skill_vs_utility": -0.0208,
-     "cover90": 0.9254,
-     "cover50": 0.3433
+     "mae_M3": 253.8696,
+     "mae_B4b": 253.2942,
+     "mae_da": 231.2609,
+     "skill_vs_trick2": -0.0023,
+     "skill_vs_utility": -0.0978,
+     "cover90": 0.9275,
+     "cover50": 0.3333
     },
     "all hours": {
-     "hours_scored": 109,
+     "hours_scored": 111,
      "days": 5,
-     "mae_M3": 241.933,
-     "mae_B4b": 256.2046,
-     "mae_da": 240.0,
-     "skill_vs_trick2": 0.0557,
-     "skill_vs_utility": -0.0081,
-     "cover90": 0.9174,
-     "cover50": 0.3028
+     "mae_M3": 251.5685,
+     "mae_B4b": 264.6198,
+     "mae_da": 238.5405,
+     "skill_vs_trick2": 0.0493,
+     "skill_vs_utility": -0.0546,
+     "cover90": 0.9189,
+     "cover50": 0.2973
     }
    }
   },
@@ -163,50 +163,50 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 64,
+     "hours_scored": 66,
      "days": 6,
-     "mae_M3": 135.2297,
-     "mae_B4b": 173.9469,
-     "mae_da": 234.4219,
-     "skill_vs_trick2": 0.2226,
-     "skill_vs_utility": 0.4231,
-     "cover90": 0.9688,
-     "cover50": 0.5781
+     "mae_M3": 131.7788,
+     "mae_B4b": 173.4576,
+     "mae_da": 238.5758,
+     "skill_vs_trick2": 0.2403,
+     "skill_vs_utility": 0.4476,
+     "cover90": 0.9697,
+     "cover50": 0.5909
     },
     "all hours": {
-     "hours_scored": 99,
+     "hours_scored": 101,
      "days": 6,
-     "mae_M3": 133.2586,
-     "mae_B4b": 173.7061,
-     "mae_da": 211.8586,
-     "skill_vs_trick2": 0.2329,
-     "skill_vs_utility": 0.371,
-     "cover90": 0.9192,
-     "cover50": 0.6162
+     "mae_M3": 131.0426,
+     "mae_B4b": 173.3911,
+     "mae_da": 215.0198,
+     "skill_vs_trick2": 0.2442,
+     "skill_vs_utility": 0.3906,
+     "cover90": 0.9208,
+     "cover50": 0.6238
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 64,
+     "hours_scored": 66,
      "days": 6,
-     "mae_M3": 135.2297,
-     "mae_B4b": 173.9469,
-     "mae_da": 234.4219,
-     "skill_vs_trick2": 0.2226,
-     "skill_vs_utility": 0.4231,
-     "cover90": 0.9688,
-     "cover50": 0.5781
+     "mae_M3": 131.7788,
+     "mae_B4b": 173.4576,
+     "mae_da": 238.5758,
+     "skill_vs_trick2": 0.2403,
+     "skill_vs_utility": 0.4476,
+     "cover90": 0.9697,
+     "cover50": 0.5909
     },
     "all hours": {
-     "hours_scored": 99,
+     "hours_scored": 101,
      "days": 6,
-     "mae_M3": 133.2586,
-     "mae_B4b": 173.7061,
-     "mae_da": 211.8586,
-     "skill_vs_trick2": 0.2329,
-     "skill_vs_utility": 0.371,
-     "cover90": 0.9192,
-     "cover50": 0.6162
+     "mae_M3": 131.0426,
+     "mae_B4b": 173.3911,
+     "mae_da": 215.0198,
+     "skill_vs_trick2": 0.2442,
+     "skill_vs_utility": 0.3906,
+     "cover90": 0.9208,
+     "cover50": 0.6238
     }
    }
   },
@@ -243,50 +243,50 @@
   "hourly": {
    "last_30_days": {
     "1-6 h ahead": {
-     "hours_scored": 60,
+     "hours_scored": 62,
      "days": 5,
-     "mae_M3": 543.3917,
-     "mae_B4b": 599.7433,
-     "mae_da": 607.6167,
-     "skill_vs_trick2": 0.094,
-     "skill_vs_utility": 0.1057,
-     "cover90": 0.8333,
-     "cover50": 0.5333
+     "mae_M3": 549.3194,
+     "mae_B4b": 605.4355,
+     "mae_da": 588.7258,
+     "skill_vs_trick2": 0.0927,
+     "skill_vs_utility": 0.0669,
+     "cover90": 0.8387,
+     "cover50": 0.5484
     },
     "all hours": {
-     "hours_scored": 95,
+     "hours_scored": 97,
      "days": 5,
-     "mae_M3": 447.84,
-     "mae_B4b": 502.7263,
-     "mae_da": 602.9263,
-     "skill_vs_trick2": 0.1092,
-     "skill_vs_utility": 0.2572,
-     "cover90": 0.8632,
-     "cover50": 0.5895
+     "mae_M3": 453.599,
+     "mae_B4b": 508.3649,
+     "mae_da": 590.9485,
+     "skill_vs_trick2": 0.1077,
+     "skill_vs_utility": 0.2324,
+     "cover90": 0.866,
+     "cover50": 0.5979
     }
    },
    "since_start": {
     "1-6 h ahead": {
-     "hours_scored": 60,
+     "hours_scored": 62,
      "days": 5,
-     "mae_M3": 543.3917,
-     "mae_B4b": 599.7433,
-     "mae_da": 607.6167,
-     "skill_vs_trick2": 0.094,
-     "skill_vs_utility": 0.1057,
-     "cover90": 0.8333,
-     "cover50": 0.5333
+     "mae_M3": 549.3194,
+     "mae_B4b": 605.4355,
+     "mae_da": 588.7258,
+     "skill_vs_trick2": 0.0927,
+     "skill_vs_utility": 0.0669,
+     "cover90": 0.8387,
+     "cover50": 0.5484
     },
     "all hours": {
-     "hours_scored": 95,
+     "hours_scored": 97,
      "days": 5,
-     "mae_M3": 447.84,
-     "mae_B4b": 502.7263,
-     "mae_da": 602.9263,
-     "skill_vs_trick2": 0.1092,
-     "skill_vs_utility": 0.2572,
-     "cover90": 0.8632,
-     "cover50": 0.5895
+     "mae_M3": 453.599,
+     "mae_B4b": 508.3649,
+     "mae_da": 590.9485,
+     "skill_vs_trick2": 0.1077,
+     "skill_vs_utility": 0.2324,
+     "cover90": 0.866,
+     "cover50": 0.5979
     }
    }
   },
